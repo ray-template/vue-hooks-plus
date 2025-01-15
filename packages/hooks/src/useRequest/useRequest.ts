@@ -46,21 +46,7 @@ export function useRequest<
   > &
     UseRequestOptionsWithInitialData<SR, TParams, PluginsOptions>,
   plugins?: PluginsOptions,
-): useRequestResult<
-  TData,
-  TParams,
-  UseRequestOptionsWithFormatResult<
-    TData,
-    TParams,
-    PluginsMiddleOptionsType<PluginsOptions, TData, TParams>,
-    SR
-  >['formatResult'],
-  UseRequestOptionsWithInitialData<
-    TData,
-    TParams,
-    PluginsMiddleOptionsType<PluginsOptions, TData, TParams>
-  >['initialData']
->
+): useRequestResult<TData, TParams>
 
 // 只有 formatResult
 export function useRequest<
@@ -77,17 +63,7 @@ export function useRequest<
     SR
   >,
   plugins?: PluginsOptions,
-): useRequestResult<
-  TData,
-  TParams,
-  UseRequestOptionsWithFormatResult<
-    TData,
-    TParams,
-    PluginsMiddleOptionsType<PluginsOptions, TData, TParams>,
-    SR
-  >['formatResult'],
-  false
->
+): useRequestResult<TData, TParams>
 
 // 只有 initialData
 export function useRequest<
@@ -102,16 +78,7 @@ export function useRequest<
     PluginsMiddleOptionsType<PluginsOptions, TData, TParams>
   >,
   plugins?: PluginsOptions,
-): useRequestResult<
-  TData,
-  TParams,
-  false,
-  UseRequestOptionsWithInitialData<
-    TData,
-    TParams,
-    PluginsMiddleOptionsType<PluginsOptions, TData, TParams>
-  >['initialData']
->
+): useRequestResult<TData, TParams>
 
 // 无 formatResults 和 initialData
 export function useRequest<
@@ -126,7 +93,7 @@ export function useRequest<
     PluginsMiddleOptionsType<PluginsOptions, TData, TParams>
   >,
   plugins?: PluginsOptions,
-): useRequestResult<TData, TParams, false, false>
+): useRequestResult<TData, TParams>
 
 export function useRequest<
   TData,
